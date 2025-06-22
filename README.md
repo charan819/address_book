@@ -26,34 +26,34 @@ A full-stack Address Book web application built with Angular for the frontend an
 ##  Backend Setup (`/backend`)
 
 1. Navigate to the backend folder:
-   ```bash
-   cd backend
+  -  ```bash
+  -  cd backend
 3. Install dependencies:
 
-  npm install
+ -  npm install
 
 3.Create a .env file:
 
-  MONGO_URI=your_mongodb_connection_string
-  JWT_SECRET=your_jwt_secret
+ -  MONGO_URI=your_mongodb_connection_string
+ -  JWT_SECRET=your_jwt_secret
   
 4.Start the server:
 
-  npm start
+ -  npm start
   
 Frontend Setup (/frontend)
 
 1.Navigate to the frontend folder:
 
-  cd frontend
+ -  cd frontend
   
 2.Install dependencies:
 
-  npm install
+ -  npm install
   
 3.Start the Angular development server:
 
-  ng serve
+ -  ng serve
   
 4.Open in browser: http://localhost:4200
 
