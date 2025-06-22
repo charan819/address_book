@@ -42,7 +42,7 @@ A full-stack Address Book web application built with Angular for the frontend an
 
  -  npm start
   
-Frontend Setup (/frontend)
+## Frontend Setup (/frontend)
 
 1.Navigate to the frontend folder:
 
