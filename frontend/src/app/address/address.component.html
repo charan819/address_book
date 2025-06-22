@@ -1,0 +1,271 @@
+<!-- address.compoennt.html -->
+
+<div class="container">
+  <a class="link-button" (click)="showAddFormFunction()">Create New Address</a>
+  <h2>List of Address</h2>
+  <div
+    *ngIf="displayedAddressList.length > 0; else noAddress"
+    class="table-container"
+  >
+    <table class="address-table">
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email ID</th>
+          <th>Phone</th>
+          <th>Address Line</th>
+          <th>State</th>
+          <th>PIN Code</th>
+          <th>Country</th>
+          <th>Date of Birth</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let address of displayedAddressList">
+          <td>{{ address.firstname }}</td>
+          <td>{{ address.lastname }}</td>
+          <td>{{ address.email }}</td>
+          <td>{{ address.phone }}</td>
+          <td>{{ address.addressline }}</td>
+          <td>{{ address.state }}</td>
+          <td>{{ address.pincode }}</td>
+          <td>{{ address.country }}</td>
+          <td>{{ address.dob }}</td>
+          <td>
+            <button class="btn" (click)="getAddressById(address._id)">
+              Get Adress
+            </button>
+            <button
+              class="btn"
+              (click)="populateUpdateForm(address)"
+              *ngIf="address.user === getUserId()"
+            >
+              Update
+            </button>
+            <button
+              class="btn delete-btn"
+              (click)="confirmDelete(address._id)"
+              *ngIf="address.user === getUserId()"
+            >
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <ng-template #noAddress>
+    <div class="no-address-container">
+      <p>No Address Available</p>
+    </div>
+  </ng-template>
+
+  <div *ngIf="showUpdateForm" class="update-form-container">
+    <button class="close-button" (click)="cancelUpdate()">X</button>
+    <h2>Update Address</h2>
+    <form class="update-form" (ngSubmit)="updateAddress(addressUpdated._id)">
+      <div>
+        <label for="updateFirstName">First Name:</label>
+        <input
+          type="text"
+          id="updateFirstName"
+          name="updateFirstName"
+          [(ngModel)]="addressUpdated.firstname"
+          required
+        />
+      </div>
+      <div>
+        <label for="updateLastName">Last Name:</label>
+        <input
+          type="text"
+          id="updateLastName"
+          name="updateLastName"
+          [(ngModel)]="addressUpdated.lastname"
+          required
+        />
+      </div>
+      <div>
+        <label for="updateEmail">Email ID:</label>
+        <input
+          type="email"
+          id="updateEmail"
+          name="updateEmail"
+          [(ngModel)]="addressUpdated.email"
+          required
+        />
+      </div>
+      <div>
+        <label for="updatePhone">Phone Number:</label>
+        <input
+          type="number"
+          id="updatePhone"
+          name="updatePhone"
+          [(ngModel)]="addressUpdated.phone"
+          required
+        />
+      </div>
+      <div>
+        <label for="updateAddressLine">Address Line:</label>
+        <input
+          type="text"
+          id="updateAddressLine"
+          name="updateAddressLine"
+          [(ngModel)]="addressUpdated.addressline"
+          required
+        />
+      </div>
+      <div>
+        <label for="updateState">Address Line:</label>
+        <input
+          type="text"
+          id="updateState"
+          name="updateState"
+          [(ngModel)]="addressUpdated.state"
+          required
+        />
+      </div>
+      <div>
+        <label for="updatePincode">Address Line:</label>
+        <input
+          type="number"
+          id="updatePincode"
+          name="updatePincode"
+          [(ngModel)]="addressUpdated.pincode"
+          required
+        />
+      </div>
+      <div>
+        <label for="updateCountry">Address Line:</label>
+        <input
+          type="text"
+          id="updateCountry"
+          name="updateCountry"
+          [(ngModel)]="addressUpdated.country"
+          required
+        />
+      </div>
+      <div>
+        <label for="updateDOB">Date Of Birth:</label>
+        <input
+          type="date"
+          id="updateDOB"
+          name="updateDOB"
+          [(ngModel)]="addressUpdated.dob"
+          required
+        />
+      </div>
+      <div>
+        <button type="submit">Update Address</button>
+        <button type="button" (click)="cancelUpdate()">Cancel</button>
+      </div>
+    </form>
+  </div>
+
+  <div
+    *ngIf="!showUpdateForm && addressById._id"
+    class="view-address-container"
+  >
+    <button class="close-button" (click)="closeView()">X</button>
+    <h2>View Address</h2>
+    <form class="view-address-form">
+      <div>
+        <label for="viewFirstName">First Name:</label>
+        <input
+          type="text"
+          id="viewFirstName"
+          name="viewFirstName"
+          [(ngModel)]="addressById.firstname"
+          required
+        />
+      </div>
+      <div>
+        <label for="viewLastName">Last Name:</label>
+        <input
+          type="text"
+          id="viewLastName"
+          name="viewLastName"
+          [(ngModel)]="addressById.lastname"
+          required
+        />
+      </div>
+      <div>
+        <label for="viewEmail">Email ID:</label>
+        <input
+          type="email"
+          id="viewEmail"
+          name="viewEmail"
+          [(ngModel)]="addressById.email"
+          required
+        />
+      </div>
+      <div>
+        <label for="viewPhone">Phone Number:</label>
+        <input
+          type="number"
+          id="viewPhone"
+          name="viewPhone"
+          [(ngModel)]="addressById.phone"
+          required
+        />
+      </div>
+      <div>
+        <label for="viewAddressLine">Address Line:</label>
+        <input
+          type="text"
+          id="viewAddressLine"
+          name="viewAddressLine"
+          [(ngModel)]="addressById.addressline"
+          required
+        />
+      </div>
+      <div>
+        <label for="viewState">State:</label>
+        <input
+          type="text"
+          id="viewState"
+          name="viewState"
+          [(ngModel)]="addressById.state"
+          required
+        />
+      </div>
+      <div>
+        <label for="viewPincode">PIN Code:</label>
+        <input
+          type="text"
+          id="viewPincode"
+          name="viewPincode"
+          [(ngModel)]="addressById.pincode"
+          required
+        />
+      </div>
+      <div>
+        <label for="viewCountry">Country:</label>
+        <input
+          type="text"
+          id="viewCountry"
+          name="viewCountry"
+          [(ngModel)]="addressById.country"
+          required
+        />
+      </div>
+      <div>
+        <label for="viewDOB">Date Of Birth:</label>
+        <input
+          type="date"
+          id="viewDOB"
+          name="viewDOB"
+          [(ngModel)]="addressById.dob"
+          required
+        />
+      </div>
+      <div>
+        <a href="/getAllAddress" class="link-button" (click)="closeView()"
+          >Get All Address</a
+        >
+      </div>
+    </form>
+  </div>
+</div>

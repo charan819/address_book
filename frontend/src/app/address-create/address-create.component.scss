@@ -1,0 +1,68 @@
+/* address-create.component.css */
+
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.create-form-container {
+    width: 90%;
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 5px;
+    margin: 10px auto;
+}
+
+.create-form-container h2 {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.create-form-container {
+    color: #333;
+}
+
+.create-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.create-form input[type="text"],
+.create-form input[type="number"],
+.create-form input[type="date"],
+.create-form input[type="email"] {
+    width: calc(100% - 12px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.create-form button[type="submit"],
+.create-form button[type="button"] {
+    width: auto;
+    padding: 10px 20px;
+    background-color: green;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.create-form button[type="button"] {
+    background-color: #dc3545;
+}
+
+.create-form a {
+    width: 10%;
+    padding: 10px;
+    background-color: #0056b3;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+}

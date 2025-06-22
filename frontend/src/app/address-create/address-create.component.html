@@ -1,0 +1,104 @@
+<!-- address-create.compoentn.html -->
+
+<div class="container">
+  <div class="create-form-container">
+    <h2>Create New Address</h2>
+    <form class="create-form" (ngSubmit)="createAddress()">
+      <div>
+        <label for="firstName">First Name:</label>
+        <input
+          type="text"
+          id="firstName"
+          name="firstName"
+          [(ngModel)]="addressCreated.firstname"
+          required
+        />
+      </div>
+      <div>
+        <label for="lastName">Last Name:</label>
+        <input
+          type="text"
+          id="lastName"
+          name="lastName"
+          [(ngModel)]="addressCreated.lastname"
+          required
+        />
+      </div>
+      <div>
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          [(ngModel)]="addressCreated.email"
+          required
+        />
+      </div>
+      <div>
+        <label for="phone">Phone:</label>
+        <input
+          type="number"
+          id="phone"
+          name="phone"
+          [(ngModel)]="addressCreated.phone"
+          required
+        />
+      </div>
+      <div>
+        <label for="addressLine">Address Line:</label>
+        <input
+          type="text"
+          id="addressLine"
+          name="addressLine"
+          [(ngModel)]="addressCreated.addressline"
+          required
+        />
+      </div>
+      <div>
+        <label for="state">State:</label>
+        <input
+          type="text"
+          id="state"
+          name="state"
+          [(ngModel)]="addressCreated.state"
+          required
+        />
+      </div>
+      <div>
+        <label for="pinCode">PIN Code:</label>
+        <input
+          type="number"
+          id="pinCode"
+          name="pinCode"
+          [(ngModel)]="addressCreated.pincode"
+          required
+        />
+      </div>
+      <div>
+        <label for="country">Country:</label>
+        <input
+          type="text"
+          id="country"
+          name="country"
+          [(ngModel)]="addressCreated.country"
+          required
+        />
+      </div>
+      <div>
+        <label for="dob">Date Of Birth:</label>
+        <input
+          type="date"
+          id="dob"
+          name="dob"
+          [(ngModel)]="addressCreated.dob"
+          required
+        />
+      </div>
+      <div>
+        <button type="submit">Add Address</button>
+        <button type="button" (click)="resetForm()">Clear</button>
+        <a href="/getAllAddress" class="link-button">Get All Address</a>
+      </div>
+    </form>
+  </div>
+</div>
