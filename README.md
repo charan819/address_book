@@ -63,7 +63,7 @@ Environment Variables
   - MONGO_URI=mongodb://localhost:27017/address_book
   - JWT_SECRET=someSuperSecretKey
   
-API Endpoints
+  ## API Endpoints
 
 Auth Routes
   - POST /api/auth/register
@@ -79,8 +79,8 @@ All address routes require a Bearer <token> in the Authorization header.
 Security Note
   - Do not commit your .env file or hardcoded secrets.
   - Use a .gitignore file with:
-  - .env
-  - node_modules/
+      - .env
+      - node_modules/
   
 
 
