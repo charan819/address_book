@@ -60,27 +60,27 @@ Frontend Setup (/frontend)
 Environment Variables
 
   Make sure to create a .env file in the backend with:
-  MONGO_URI=mongodb://localhost:27017/address_book
-  JWT_SECRET=someSuperSecretKey
+  - MONGO_URI=mongodb://localhost:27017/address_book
+  - JWT_SECRET=someSuperSecretKey
   
 API Endpoints
 
 Auth Routes
-  POST /api/auth/register
-  POST /api/auth/login
+  - POST /api/auth/register
+  - POST /api/auth/login
 
 Address Routes (protected)
-  POST /api/address/create
-  GET /api/address/user
-  DELETE /api/address/delete/:id
+  - POST /api/address/create
+  - GET /api/address/user
+  - DELETE /api/address/delete/:id
 
 All address routes require a Bearer <token> in the Authorization header.
 
 Security Note
-  Do not commit your .env file or hardcoded secrets.
-  Use a .gitignore file with:
-  .env
-  node_modules/
+  - Do not commit your .env file or hardcoded secrets.
+  - Use a .gitignore file with:
+  - .env
+  - node_modules/
   
 
 
