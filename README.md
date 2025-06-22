@@ -26,8 +26,9 @@ A full-stack Address Book web application built with Angular for the frontend an
 ##  Backend Setup (`/backend`)
 
 1. Navigate to the backend folder:
-  -  ```bash
+   
   -  cd backend
+
 3. Install dependencies:
 
  -  npm install
